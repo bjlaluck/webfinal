@@ -25,6 +25,6 @@
     <%= $redis.get("comments") %>
   </p>
 
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', request.referer %>
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-info bottom-link" %> |
+  <%= link_to 'Back', request.referer,  class: "btn btn-warning bottom-link" %>
 </div>
