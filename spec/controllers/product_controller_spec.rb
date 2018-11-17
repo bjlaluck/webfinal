@@ -14,11 +14,13 @@ describe ProductsController, type: :controller do
 
         it "creates a new product if all fields appropriate and leaves message of success" do
           params = {
-            name: "aa", description: "aa", image_url: "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", colour: "dd", price: 3.33
+            name: "Coaster", description: "Best Coaster Bike", image_url: "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", colour: "gold", price: 3.33
           }
           expect{post :create, params: {product: params}}.to change(Product,:count).by(1)
           expect(assigns(:product)).to be_a(Product)
-          expect(response).to redirect_to product_path(1)
+          product = assigns(:product)
+          expect(response).to redirect_to product_path(product.id)
+          expect(product.colour).to eq("gold")
           expect(flash[:notice]).to eq 'Product was successfully created.'
         end
 
@@ -79,11 +81,28 @@ describe ProductsController, type: :controller do
 
 
      context 'GET #index' do
-       it 'should success and render to index page' do
+
+       let(:product) { FactoryBot.create(:product) }
+       let(:product2) { FactoryBot.create(:product2) }
+
+       it 'should success, render to index page, and show all products' do
          get :index
          expect(response).to have_http_status(200)
          expect(response).to render_template :index
+         expect(assigns(:products)).to eq(Product.all)
 
+       end
+     end
+
+     context 'GET #index with params' do
+       let(:product) { FactoryBot.create(:product) }
+       let(:product2) { FactoryBot.create(:product2) }
+
+       it 'should success, render to index page, and show only specific product' do
+         get :index, params: { q: "tour" }
+         expect(response).to have_http_status(200)
+         expect(response).to render_template :index
+         expect(assigns(:products)).to eq(Product.search("tour"))
        end
      end
 

@@ -8,5 +8,12 @@ FactoryBot.define do
     price {3.33}
   end
 
+  factory :product2, class: Product do
+    name {"tour bike"}
+    description {"Best tour bike ever!"}
+    image_url {"https://en.wikipedia.org/wiki/File:SinusRhythmLabels.svg"}
+    colour {"red"}
+    price {3.33}
+  end
 
 end
