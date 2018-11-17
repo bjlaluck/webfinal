@@ -1,0 +1,772 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:42.668272"], ["updated_at", "2018-11-17 17:32:42.668272"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$W4cCcNFkbqZ61Up.IjZovOUTXH1Jwgjh32YJGamwK5GzlRmEE9xhu"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"colour"=>"dd", "description"=>"aa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"aa", "price"=>"3.33"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "aa"], ["description", "aa"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:42.725630"], ["updated_at", "2018-11-17 17:32:42.725630"], ["colour", "dd"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:42.737166"], ["updated_at", "2018-11-17 17:32:42.737166"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$MeY/XlfFoavGv6cl365xju1UNB9qd.omfE/MGJRGdr5tRk/BlqNQG"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"colour"=>"dd", "description"=>"aa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"aa"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aa"], ["description", "aa"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:42.763711"], ["updated_at", "2018-11-17 17:32:42.763711"], ["colour", "dd"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:42.778814"], ["updated_at", "2018-11-17 17:32:42.778814"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$J8LUcTRzW7QGaoR5.03tuuhi9H/5E8AHJytbHnjMkwkjspn0nK48a"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:42.782714"], ["updated_at", "2018-11-17 17:32:42.782714"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"colour"=>"brown", "description"=>"Hoffa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"Jimmy", "price"=>"1.99"}, "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "description" = ?, "colour" = ?, "price" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Jimmy"], ["description", "Hoffa"], ["colour", "brown"], ["price", 1], ["updated_at", "2018-11-17 17:32:42.817337"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1
+Completed 302 Found in 34ms (ActiveRecord: 1.9ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:42.835681"], ["updated_at", "2018-11-17 17:32:42.835681"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$ww6jgxLNuPSW.lQAy/a.3O8S17Rqqm1WnnqO3tmVNFmeE25HM5kwC"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:42.840810"], ["updated_at", "2018-11-17 17:32:42.840810"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"colour"=>"brown", "description"=>"Hoffa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"Jimmy", "price"=>"eee"}, "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "description" = ?, "colour" = ?, "price" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Jimmy"], ["description", "Hoffa"], ["colour", "brown"], ["price", 0], ["updated_at", "2018-11-17 17:32:42.877820"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1
+Completed 302 Found in 33ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:42.923573"], ["updated_at", "2018-11-17 17:32:42.923573"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$nwEmitJMdPSp1STTYYrMw.LP18UyoWB80wO5eMHXjclG3qQlO43gK"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered products/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 126ms (Views: 104.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.073314"], ["updated_at", "2018-11-17 17:32:43.073314"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered products/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 22ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user6@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:43.109862"], ["updated_at", "2018-11-17 17:32:43.109862"], ["email", "user6@example.com"], ["encrypted_password", "$2a$04$XKpFkVai/LK22FWrYJ3nzewSGwZxPI9X0G.hlf1v30oUVu9jiua4y"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.114274"], ["updated_at", "2018-11-17 17:32:43.114274"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 26ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by SimplePagesController#index as HTML
+  Rendering simple_pages/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered simple_pages/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user7@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.178673"], ["updated_at", "2018-11-17 17:32:43.178673"], ["email", "user7@example.com"], ["encrypted_password", "$2a$04$ZXD9R8lntK4nT02vYDiEzOmF/jXMkoZsyHkiY5B.xeTGxLu4aWfCO"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user8@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:32:43.186460"], ["updated_at", "2018-11-17 17:32:43.186460"], ["email", "user8@example.com"], ["encrypted_password", "$2a$04$quLENO1S3T7EFx7tOqJqqeN2p0ddskTAdXcRhkZACLyXqQ/beUoE6"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://test.host/
+Completed 302 Found in 31ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user9@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.230378"], ["updated_at", "2018-11-17 17:32:43.230378"], ["email", "user9@example.com"], ["encrypted_password", "$2a$04$PafrgQRT5zkzhkXJ8m7s9.AXOOSg0y3meyXpRNVmC0eFy3RaDpwA2"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 43ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.286354"], ["updated_at", "2018-11-17 17:32:43.286354"], ["email", "user10@example.com"], ["encrypted_password", "$2a$04$ObKQOYzOlIYwKQ1PyI9hEuzCtApvIgepDLgfjMIkqsV6827APKpHW"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.335933"], ["updated_at", "2018-11-17 17:32:43.335933"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user11@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.349507"], ["updated_at", "2018-11-17 17:32:43.349507"], ["email", "user11@example.com"], ["encrypted_password", "$2a$04$RpnYO94x6VToNmUvCDGYZO89KoFmEgDY8kJ0/jNFuaOsp1W6xU9j2"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (1.4ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Awful bike!"], ["rating", 1], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.372013"], ["updated_at", "2018-11-17 17:32:43.372013"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 0da33dfb-a4dd-46c4-b0b9-c015b11dfb12) to Async(default) with arguments: #<GlobalID:0x00007fc2bc2c9300 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007fc2bc2c80e0 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Ok bike!"], ["rating", 3], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.390512"], ["updated_at", "2018-11-17 17:32:43.390512"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 3f6a56f2-831e-41b7-9d34-6dac6dff1f8b) to Async(default) with arguments: #<GlobalID:0x00007fc2bcaf0ee8 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007fc2bc2c80e0 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Great bike!"], ["rating", 5], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.396633"], ["updated_at", "2018-11-17 17:32:43.396633"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 8b87142e-3a84-4f4b-9df6-ea044a0e775b) to Async(default) with arguments: #<GlobalID:0x00007fc2bcab6c48 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007fc2bc2c80e0 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b] Performing CommentUpdateJob (Job ID: 8b87142e-3a84-4f4b-9df6-ea044a0e775b) from Async(default) with arguments: #<GlobalID:0x00007fc2bb48a7a8 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007fc2bb488a98 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[36mComment Load (12.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [0da33dfb-a4dd-46c4-b0b9-c015b11dfb12] Performing CommentUpdateJob (Job ID: 0da33dfb-a4dd-46c4-b0b9-c015b11dfb12) from Async(default) with arguments: #<GlobalID:0x00007fc2bb45d3c0 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007fc2bb45c038 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[36mComment Load (7.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [3f6a56f2-831e-41b7-9d34-6dac6dff1f8b] Performing CommentUpdateJob (Job ID: 3f6a56f2-831e-41b7-9d34-6dac6dff1f8b) from Async(default) with arguments: #<GlobalID:0x00007fc2bc26cd08 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007fc2bc266cf0 @uri=#<URI::GID gid://four-one/User/1>>
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b]   Rendered comments/_comment.html.erb (6.2ms)
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b]   [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b] [ActionCable] Broadcasting to product:1: {:comment=>"<div class=\"row\">\n  <hr>\n  <p>\n    Peter  <small><em>less than a minute ago</em></small>\n  </p>\n  <div class=\"rated\" data-score=\"5\" title=\"bad\"></div>\n\n  <p>Great bike!</p>\n\n</div>\n", :average_rating=>3.0}
+[ActiveJob] [CommentUpdateJob] [8b87142e-3a84-4f4b-9df6-ea044a0e775b] Performed CommentUpdateJob (Job ID: 8b87142e-3a84-4f4b-9df6-ea044a0e775b) from Async(default) in 246.03ms
+[ActiveJob] [CommentUpdateJob] [3f6a56f2-831e-41b7-9d34-6dac6dff1f8b]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [3f6a56f2-831e-41b7-9d34-6dac6dff1f8b]   Rendered comments/_comment.html.erb (14.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+[ActiveJob] [CommentUpdateJob] [0da33dfb-a4dd-46c4-b0b9-c015b11dfb12]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [0da33dfb-a4dd-46c4-b0b9-c015b11dfb12]   Rendered comments/_comment.html.erb (13.3ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.657389"], ["updated_at", "2018-11-17 17:32:43.657389"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user12@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.664306"], ["updated_at", "2018-11-17 17:32:43.664306"], ["email", "user12@example.com"], ["encrypted_password", "$2a$04$u6v69RVDnb4g76oT..f1W.azMMnl.mo3wfpTBG.ukPXF0SDykik1K"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Awful bike!"], ["rating", 1], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.668111"], ["updated_at", "2018-11-17 17:32:43.668111"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 653be17f-b86b-4538-b3b3-ee0c0771d176) to Async(default) with arguments: #<GlobalID:0x00007fc2bb410a70 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007fc2bb410110 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Ok bike!"], ["rating", 3], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.673777"], ["updated_at", "2018-11-17 17:32:43.673777"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: e9e9ee96-2289-4082-af57-42019429d8dc) to Async(default) with arguments: #<GlobalID:0x00007fc2bc1d4eb8 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007fc2bb410110 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Great bike!"], ["rating", 5], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.680370"], ["updated_at", "2018-11-17 17:32:43.680370"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: b810cd19-049f-47c1-8d54-030ea2b58d33) to Async(default) with arguments: #<GlobalID:0x00007fc2bc1b9410 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007fc2bb410110 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mComment Load (6.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (13.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [0da33dfb-a4dd-46c4-b0b9-c015b11dfb12]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [0da33dfb-a4dd-46c4-b0b9-c015b11dfb12] Error performing CommentUpdateJob (Job ID: 0da33dfb-a4dd-46c4-b0b9-c015b11dfb12) from Async(default) in 291.43ms: NoMethodError (undefined method `average_rating' for nil:NilClass):
+/Users/bohdanlaluck/Desktop/Aweb/Section6/6.Final/app/jobs/comment_update_job.rb:5:in `perform'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/i18n-1.0.1/lib/i18n.rb:284:in `with_locale'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:35:in `perform_now'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:24:in `block in execute'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/reloader.rb:72:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:22:in `execute'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+[ActiveJob] [CommentUpdateJob] [3f6a56f2-831e-41b7-9d34-6dac6dff1f8b]   [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [3f6a56f2-831e-41b7-9d34-6dac6dff1f8b] Error performing CommentUpdateJob (Job ID: 3f6a56f2-831e-41b7-9d34-6dac6dff1f8b) from Async(default) in 291.45ms: NoMethodError (undefined method `average_rating' for nil:NilClass):
+/Users/bohdanlaluck/Desktop/Aweb/Section6/6.Final/app/jobs/comment_update_job.rb:5:in `perform'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/i18n-1.0.1/lib/i18n.rb:284:in `with_locale'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:35:in `perform_now'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:24:in `block in execute'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/reloader.rb:72:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:22:in `execute'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.703035"], ["updated_at", "2018-11-17 17:32:43.703035"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user13@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.708761"], ["updated_at", "2018-11-17 17:32:43.708761"], ["email", "user13@example.com"], ["encrypted_password", "$2a$04$rD9phzxUSpre8UncGn0h3exj0eG2fF0/PSxFMxiDPiLv8czC2WTqW"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Awful bike!"], ["rating", 1], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.712651"], ["updated_at", "2018-11-17 17:32:43.712651"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 899241a5-724b-47b3-ba2e-d95f400d6a0f) to Async(default) with arguments: #<GlobalID:0x00007fc2bb31a378 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007fc2bb318690 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Ok bike!"], ["rating", 3], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.717700"], ["updated_at", "2018-11-17 17:32:43.717700"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: e7b0aab1-386e-4d10-80ed-e25b99e88bde) to Async(default) with arguments: #<GlobalID:0x00007fc2bc0bbc48 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007fc2bb318690 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Great bike!"], ["rating", 5], ["product_id", 1], ["created_at", "2018-11-17 17:32:43.722360"], ["updated_at", "2018-11-17 17:32:43.722360"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 3e95259c-de1c-4ada-a1a4-dbf340c63a91) to Async(default) with arguments: #<GlobalID:0x00007fc2bb2eb140 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007fc2bb318690 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.732549"], ["updated_at", "2018-11-17 17:32:43.732549"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user14@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.738988"], ["updated_at", "2018-11-17 17:32:43.738988"], ["email", "user14@example.com"], ["encrypted_password", "$2a$04$uWf91hpWM9keZhPfKlFJUeQxggL/nxu6/Fc1KNVCg9q91HJx0Qxm2"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (4.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:32:43.765893"], ["updated_at", "2018-11-17 17:32:43.765893"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user15@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.780032"], ["updated_at", "2018-11-17 17:32:43.780032"], ["email", "user15@example.com"], ["encrypted_password", "$2a$04$aA6WokHWvdXVK2yF7Jr7b.DDtNshLINiRXRBdwM9haw6.KVmCBdWa"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mComment Load (70.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (62.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (67.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user16@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:32:43.822357"], ["updated_at", "2018-11-17 17:32:43.822357"], ["email", "user16@example.com"], ["encrypted_password", "$2a$04$S/pFq1kU98mOQeYAWayH/uifp2.oMYp446NFXldAJN5cWJOlqyyGy"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "not_an_email"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:55.813792"], ["updated_at", "2018-11-17 17:33:55.813792"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$HMmqsLqQAWrAbLT9kSTIlu4lEuvEI3Ytg0x5lIxoYsFeBA97GHzGW"], ["admin", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"colour"=>"dd", "description"=>"aa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"aa", "price"=>"3.33"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "aa"], ["description", "aa"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:55.844832"], ["updated_at", "2018-11-17 17:33:55.844832"], ["colour", "dd"], ["price", 3]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms)
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:55.852519"], ["updated_at", "2018-11-17 17:33:55.852519"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$Vo5yQfJvOVNqDUYFcOCgWOa6x0yWWZ0QRd/4AZvvVvWR6tasxnRlu"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"colour"=>"dd", "description"=>"aa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"aa"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aa"], ["description", "aa"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:55.863516"], ["updated_at", "2018-11-17 17:33:55.863516"], ["colour", "dd"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:55.869362"], ["updated_at", "2018-11-17 17:33:55.869362"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$4tY7a8teOc17qXtQN/9.6e5ra2aMJ76C3F95wKa7.OQZX2wVaThLC"], ["admin", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:55.871445"], ["updated_at", "2018-11-17 17:33:55.871445"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"colour"=>"brown", "description"=>"Hoffa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"Jimmy", "price"=>"1.99"}, "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "description" = ?, "colour" = ?, "price" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Jimmy"], ["description", "Hoffa"], ["colour", "brown"], ["price", 1], ["updated_at", "2018-11-17 17:33:55.887814"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1
+Completed 302 Found in 16ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:55.898183"], ["updated_at", "2018-11-17 17:33:55.898183"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$pwRV4omM2RvrpMYbg8iZ2.2C/P.9cUDwPGCfnjtPB5FttOUJVxNXS"], ["admin", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:55.900085"], ["updated_at", "2018-11-17 17:33:55.900085"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"colour"=>"brown", "description"=>"Hoffa", "image_url"=>"http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", "name"=>"Jimmy", "price"=>"eee"}, "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "description" = ?, "colour" = ?, "price" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Jimmy"], ["description", "Hoffa"], ["colour", "brown"], ["price", 0], ["updated_at", "2018-11-17 17:33:55.915237"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:55.932428"], ["updated_at", "2018-11-17 17:33:55.932428"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$g98RMkFwUPNJBn.7DYtVdOTH64ItXnd8w5im2.aPgsbf3nvpQDage"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered products/new.html.erb within layouts/application (0.5ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 40ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (3.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:55.993980"], ["updated_at", "2018-11-17 17:33:55.993980"], ["colour", "red"], ["price", 3]]
+  [1m[35m (3.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered products/show.html.erb within layouts/application (0.6ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 27ms (Views: 1.7ms | ActiveRecord: 0.7ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user6@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:56.040130"], ["updated_at", "2018-11-17 17:33:56.040130"], ["email", "user6@example.com"], ["encrypted_password", "$2a$04$W5MaRz0Wam/cezB4hhfTb.QNYBN1T8hTxsHFzmfiQzBguznZz2yme"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:56.049717"], ["updated_at", "2018-11-17 17:33:56.049717"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by SimplePagesController#index as HTML
+  Rendering simple_pages/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered simple_pages/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user7@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.096601"], ["updated_at", "2018-11-17 17:33:56.096601"], ["email", "user7@example.com"], ["encrypted_password", "$2a$04$pHVl9fipKSMk440ohYccyenqRjyXQsPSaYbDeUd9RLciwJTGskqtK"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user8@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "admin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Paul"], ["last_name", "Smart"], ["created_at", "2018-11-17 17:33:56.104514"], ["updated_at", "2018-11-17 17:33:56.104514"], ["email", "user8@example.com"], ["encrypted_password", "$2a$04$soaDB9UiPVIZw5wRdgFqIuY9dhjshwih27bOJ94HEctTtzFvG.dAK"], ["admin", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://test.host/
+Completed 302 Found in 22ms (ActiveRecord: 0.3ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user9@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.145719"], ["updated_at", "2018-11-17 17:33:56.145719"], ["email", "user9@example.com"], ["encrypted_password", "$2a$04$.qqkWSCOlRM1qSatao5OiOVJYFokcR6/T/AMWwtC7LothQLndHZa6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 26ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.183143"], ["updated_at", "2018-11-17 17:33:56.183143"], ["email", "user10@example.com"], ["encrypted_password", "$2a$04$cA8aEBekJsR5QXM9WEb4z.6HLQt9uX42qfuQ99/hZGBJ4BvmleZSO"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:56.199452"], ["updated_at", "2018-11-17 17:33:56.199452"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user11@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.205080"], ["updated_at", "2018-11-17 17:33:56.205080"], ["email", "user11@example.com"], ["encrypted_password", "$2a$04$OIfMH67REtYUAFVGuup3k.O9Xbt4eBXFCNlvKhHXYcBaPvrRFlC9q"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Awful bike!"], ["rating", 1], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.222534"], ["updated_at", "2018-11-17 17:33:56.222534"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: e2382e85-4577-4182-a025-9ee9272cac56) to Async(default) with arguments: #<GlobalID:0x00007feac5c9be38 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007feac5c9b280 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Ok bike!"], ["rating", 3], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.237506"], ["updated_at", "2018-11-17 17:33:56.237506"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: e32d0d64-7741-4388-bd9f-f1116f74e7d3) to Async(default) with arguments: #<GlobalID:0x00007feac9848dc8 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007feac5c9b280 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Great bike!"], ["rating", 5], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.242527"], ["updated_at", "2018-11-17 17:33:56.242527"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: deef1eb7-0234-4452-a592-fcdd142d71c4) to Async(default) with arguments: #<GlobalID:0x00007feac62d7a68 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007feac5c9b280 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mComment Load (16.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:56.260266"], ["updated_at", "2018-11-17 17:33:56.260266"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user12@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.266069"], ["updated_at", "2018-11-17 17:33:56.266069"], ["email", "user12@example.com"], ["encrypted_password", "$2a$04$CE3ZxZT7Vhu7H1GLYjXwXuqDMcXV9XNzjY2ihtYGIMcL9bNe.yKha"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Awful bike!"], ["rating", 1], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.268371"], ["updated_at", "2018-11-17 17:33:56.268371"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: b8e8df34-6410-4535-b055-1b762ecfeded) to Async(default) with arguments: #<GlobalID:0x00007feac4f99870 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007feac4f98bc8 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Ok bike!"], ["rating", 3], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.272467"], ["updated_at", "2018-11-17 17:33:56.272467"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 48363205-8365-4704-9c97-1e29a93d3848) to Async(default) with arguments: #<GlobalID:0x00007feac4f8a3c0 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007feac4f98bc8 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Great bike!"], ["rating", 5], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.276311"], ["updated_at", "2018-11-17 17:33:56.276311"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: ff1f71be-7db4-4031-a7b3-723dea93cb24) to Async(default) with arguments: #<GlobalID:0x00007feac4f72ab8 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007feac4f98bc8 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mComment Load (8.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (9.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (10.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:56.291813"], ["updated_at", "2018-11-17 17:33:56.291813"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user13@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.298132"], ["updated_at", "2018-11-17 17:33:56.298132"], ["email", "user13@example.com"], ["encrypted_password", "$2a$04$BgfYRjT4BgHCrSQxTgDZ.O65CXOOpbrNPzfL4Vt2Gl0/LdK39rEeS"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Awful bike!"], ["rating", 1], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.301400"], ["updated_at", "2018-11-17 17:33:56.301400"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 3a005d8c-c9c5-48ac-8121-26713e8e9479) to Async(default) with arguments: #<GlobalID:0x00007feac5c68600 @uri=#<URI::GID gid://four-one/Comment/1>>, #<GlobalID:0x00007feac5c7b980 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Ok bike!"], ["rating", 3], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.306095"], ["updated_at", "2018-11-17 17:33:56.306095"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 3119596a-b8b5-458a-9ebb-ac5d135ca6df) to Async(default) with arguments: #<GlobalID:0x00007feac5c61800 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007feac5c7b980 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Great bike!"], ["rating", 5], ["product_id", 1], ["created_at", "2018-11-17 17:33:56.311795"], ["updated_at", "2018-11-17 17:33:56.311795"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued CommentUpdateJob (Job ID: 592e14a4-cb82-4f32-8d0d-084098230246) to Async(default) with arguments: #<GlobalID:0x00007feac983e378 @uri=#<URI::GID gid://four-one/Comment/3>>, #<GlobalID:0x00007feac5c7b980 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mComment Load (12.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (3.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:56.322843"], ["updated_at", "2018-11-17 17:33:56.322843"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user14@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.331384"], ["updated_at", "2018-11-17 17:33:56.331384"], ["email", "user14@example.com"], ["encrypted_password", "$2a$04$BtaBEwgKhYlU3nEmjLdqrOZsiDqxgrYUUSMyW3U4Agl1BhqVXHuc."]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Load (6.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [CommentUpdateJob] [3119596a-b8b5-458a-9ebb-ac5d135ca6df] Performing CommentUpdateJob (Job ID: 3119596a-b8b5-458a-9ebb-ac5d135ca6df) from Async(default) with arguments: #<GlobalID:0x00007feac57e5358 @uri=#<URI::GID gid://four-one/Comment/2>>, #<GlobalID:0x00007feac57e48e0 @uri=#<URI::GID gid://four-one/User/1>>
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+[ActiveJob] [CommentUpdateJob] [3119596a-b8b5-458a-9ebb-ac5d135ca6df]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "race bike"], ["description", "Best bike ever!"], ["image_url", "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg"], ["created_at", "2018-11-17 17:33:56.481541"], ["updated_at", "2018-11-17 17:33:56.481541"], ["colour", "red"], ["price", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user15@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.489556"], ["updated_at", "2018-11-17 17:33:56.489556"], ["email", "user15@example.com"], ["encrypted_password", "$2a$04$NteuEz7lwX7xbiT7j2fo2ufyaZ7K7XAeENjRH2AUpjlWmELRuInRK"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+[ActiveJob] [CommentUpdateJob] [3119596a-b8b5-458a-9ebb-ac5d135ca6df]   Rendered comments/_comment.html.erb (77.8ms)
+[ActiveJob] [CommentUpdateJob] [3119596a-b8b5-458a-9ebb-ac5d135ca6df] Error performing CommentUpdateJob (Job ID: 3119596a-b8b5-458a-9ebb-ac5d135ca6df) from Async(default) in 159.65ms: ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+/Users/bohdanlaluck/Desktop/Aweb/Section6/6.Final/app/views/comments/_comment.html.erb:4:in `_app_views_comments__comment_html_erb___158859293315813422_70323158374540'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/template.rb:159:in `block in render'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:170:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/template.rb:354:in `instrument_render_template'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/template.rb:157:in `render'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/partial_renderer.rb:344:in `block in render_partial'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/abstract_renderer.rb:44:in `block in instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/abstract_renderer.rb:43:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/partial_renderer.rb:333:in `render_partial'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/partial_renderer.rb:312:in `render'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/renderer.rb:49:in `render_partial'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/renderer/renderer.rb:23:in `render'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/rendering.rb:103:in `_render_template'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.0/lib/action_view/rendering.rb:84:in `render_to_body'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/abstract_controller/rendering.rb:46:in `render_to_string'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/action_controller/metal/rendering.rb:41:in `render_to_string'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/action_controller/renderer.rb:83:in `render'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.0/lib/action_controller/metal/rendering.rb:11:in `render'
+/Users/bohdanlaluck/Desktop/Aweb/Section6/6.Final/app/jobs/comment_update_job.rb:10:in `render_comment'
+/Users/bohdanlaluck/Desktop/Aweb/Section6/6.Final/app/jobs/comment_update_job.rb:5:in `perform'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/i18n-1.0.1/lib/i18n.rb:284:in `with_locale'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/notifications.rb:168:in `instrument'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:35:in `perform_now'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:24:in `block in execute'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/reloader.rb:72:in `wrap'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.0/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/execution.rb:22:in `execute'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activejob-5.2.0/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user16@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["last_name", "Example"], ["created_at", "2018-11-17 17:33:56.522188"], ["updated_at", "2018-11-17 17:33:56.522188"], ["email", "user16@example.com"], ["encrypted_password", "$2a$04$JgeOFGbPuPZGrL0Yy906TutwlPnP6vr79mcGuBw82d7aGHqZDXoFW"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "not_an_email"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
